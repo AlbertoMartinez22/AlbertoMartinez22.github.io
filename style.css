@@ -1,11 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    margin: auto;
+    margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    flex-wrap: wrap;
-    min-width: 375px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -13,19 +14,18 @@ header {
     background-color: #0056b3;
     color: #fff;
     padding: 20px 0;
-    flex-wrap: wrap;
-    min-width: 250px;
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 header h1 {
-    margin-left: 0%;
-    margin-right: 20%;
+    margin: 0;
 }
 
 nav ul {
@@ -33,7 +33,6 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -53,14 +52,13 @@ nav ul li a:hover {
 
 .container {
     width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    flex-wrap: wrap;
+    margin: 20px auto;
+    flex-grow: 1;
 }
 
 img {
-    max-width: 100%; /* La imagen no excederá el ancho del contenedor */
-    height: auto;    /* Mantiene la proporción de la imagen */
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -109,64 +107,50 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: auto;
+    position: absolute;
     bottom: 0;
     width: 100%;
-    min-width: 375px;
-    margin: auto;
 }
 
 footer .container p {
-    margin: auto;
-    flex-wrap: wrap;
+    margin: 0;
 }
 
 .containercont {
     background-color: #c8d2f3;
-    width: 20%;
-    margin: auto;
+    width: 50%;
+    margin: 20px auto;
     padding: 70px;
-    margin-top: 20px;
-    margin-bottom: 40px;
     border-radius: 20px;
-    min-width: 375px;
+    text-align: center;
 }
 
-#dent {
-    width: 20%;
-    margin: auto;
-}
-
-#serv {
-    width: 40%;
-    margin: auto;
-    margin-left: 60%;
+#dent, #serv, #servi {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
 }
 
 #p {
     font-size: large;
 }
 
-#servi {
-    width: 40%;
-    margin: auto;
-}
-
 #list {
     margin: auto;
     border-radius: 10px;
     background-color: #9fabd2;
-    flex-wrap: wrap;
-    min-width: 375px;
+    padding: 20px;
+    width: 80%;
 }
 
 #logo {
     width: 30%;
+    display: block;
+    margin: 0 auto;
 }
 
 .logot {
-    margin-left: 1%;
-    margin: 0%;
+    margin: 0;
 }
 
 /* Media Queries for responsiveness */
@@ -192,13 +176,13 @@ footer .container p {
     }
 
     .containercont {
-        width: 100%;
+        width: 80%;
         padding: 30px;
     }
 
-    #serv, #servi {
-        width: 100%;
-        margin: auto;
+    #serv, #servi, #dent {
+        width: 80%;
+        margin: 20px auto;
     }
 
     #list {
