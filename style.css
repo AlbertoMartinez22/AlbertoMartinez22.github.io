@@ -154,7 +154,7 @@ footer .container p {
 #list{
     border-radius: 10px;
     background-color: #9fabd2;
-    padding: 0px;
+    
     flex-wrap: wrap;
     min-width: 500px;
 }
