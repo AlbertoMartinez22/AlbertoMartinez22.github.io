@@ -14,7 +14,8 @@ header {
     background-color: #0056b3;
     color: #fff;
     padding: 20px 0;
-    min-width: 500px;
+    flex-wrap: wrap;
+    min-width: 800px;
 }
 
 header .container {
@@ -120,15 +121,18 @@ footer {
 footer .container p {
     margin: 0;
     flex-wrap: wrap;
+    min-width: 500px;
+
 }
 .containercont{
     background-color: #c8d2f3;
-    width: 80%;
-    margin: 0 auto;
+    width: 20%;
+    margin: auto;
     padding: 70px;
     margin-top: 20px;
     margin-bottom: 40px;
     border-radius: 20px;
+    min-width: 500PX;
 }
 
 
@@ -154,7 +158,6 @@ footer .container p {
 #list{
     border-radius: 10px;
     background-color: #9fabd2;
-    
     flex-wrap: wrap;
     min-width: 500px;
 }
