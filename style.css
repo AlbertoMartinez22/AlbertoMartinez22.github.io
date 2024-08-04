@@ -4,6 +4,8 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    flex-wrap: wrap;
+    min-width: 250px;
     
     
 }
@@ -12,6 +14,7 @@ header {
     background-color: #0056b3;
     color: #fff;
     padding: 20px 0;
+    min-width: 500px;
 }
 
 header .container {
@@ -32,6 +35,8 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -54,6 +59,7 @@ nav ul li a:hover {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
+    flex-wrap: wrap;
 }
 img {
     max-width: 100%; /* La imagen no excederá el ancho del contenedor */
@@ -108,10 +114,12 @@ footer {
     position: auto;
     bottom: 0;
     width: 100%;
+    min-width: 500px;
 }
 
 footer .container p {
     margin: 0;
+    flex-wrap: wrap;
 }
 .containercont{
     background-color: #c8d2f3;
