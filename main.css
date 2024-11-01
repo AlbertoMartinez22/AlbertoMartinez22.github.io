@@ -1,0 +1,113 @@
+body{
+  font-family: 'Titillium Web', sans-serif;
+}
+
+#testimonial{
+  background: #696969;
+  padding: 50px 0 30px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+header{
+  margin-top: 10%;
+}
+
+#contact{
+  background: url(../img/fondo-verde-hierba-falsa_53876-16313.jpg)
+}
+
+#transbox {
+  margin-bottom: 10px; /* Corrección aquí */
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  font-weight: bolder;
+  color: #000000;
+}
+
+/* Si aún necesitas soporte para IE8 */
+* html #transbox { 
+  filter: alpha(opacity=60); 
+}
+
+
+.navbar{
+  box-shadow: 2px 2px 4px rgba(186, 220, 88,.9);
+  opacity: .9;
+}
+
+.navbar .nav-item .nav-link{
+  color: black;
+}
+
+footer{
+  background-color: rgba(186, 220, 88,.9);
+  font-weight:bolder;
+
+}
+
+
+
+
+.about-section,
+.menu-section,
+.contact-section {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.menu-items {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.comida {
+  padding: 1px;
+    margin: 1px;
+    border-radius: 1px;
+    width: 100%;
+}
+
+.menu-item {
+    background-color: #e2e2e2;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 45%;
+}
+
+.menu-item h3 {
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    margin-bottom: 10px;
+}
+
+.menu-item span {
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section,
+    .menu-section,
+    .contact-section {
+        padding: 1rem;
+    }
+
+    .menu-item {
+        padding: 15px;
+        margin: 5px;
+    }
+}
