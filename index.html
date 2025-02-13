@@ -5,52 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz San Valentín</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        /* Estilos generales */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
             background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-            overflow-x: hidden;
+            overflow-x: hidden; /* Evita que la página se desborde a los lados */
         }
         header {
-            text-align: center;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
-            position: relative;
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between; /* Espacia los elementos */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.corazon {
+    width: 80px; /* Ajusta el tamaño base */
+    height: auto; /* Mantiene la proporción */
+    max-width: 15vw; /* Se adapta en pantallas grandes */
+    min-width: 50px; /* Tamaño mínimo en pantallas pequeñas */
+}
+
+h1 {
+    flex-grow: 1; /* Hace que el título ocupe el espacio central */
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff4b5c;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .corazon {
+        max-width: 12vw; /* Reduce tamaño en móviles */
+    }
+}
+
+        
+        .eso {
+            color: black;
         }
-        h1 {
-            color: #ff4b5c;
-            font-size: 3em;
-        }
+        /* Galería */
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 20px;
+            gap: 10px;
+            padding: 20px;
+            max-width: 100%;
         }
+
         .gallery img {
-            width: 300px;
-            height: 300px;
-            margin: 10px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             border-radius: 15px;
-            object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
         }
-        .gallery img:hover {
-            transform: scale(1.1);
+        
+        .timeline h2 {
+            text-align: center;
+            color: #ff4b5c;
         }
+
+        /* Línea de Tiempo */
         .timeline {
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .timeline h2 {
             text-align: center;
             color: #ff4b5c;
+        }
+        /* Canciones */
+        .playlist {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 40px auto;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .playlist iframe {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .event {
             margin: 20px 0;
@@ -65,98 +119,215 @@
             margin: 5px 0 0;
             color: #555;
         }
-        .playlist {
-            text-align: center;
-            margin: 40px 0;
+
+        /* Ajustes Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .timeline { width: 90%; }
         }
-        .playlist iframe {
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        /* Corazones animados */
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: red;
-            transform: rotate(45deg);
-            animation: float 5s infinite ease-in-out;
-            opacity: 0.7;
-        }
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: red;
-            border-radius: 50%;
-        }
-        .heart::before {
-            top: -10px;
-            left: 0;
-        }
-        .heart::after {
-            left: -10px;
-            top: 0;
-        }
-        @keyframes float {
-            from { transform: translateY(100vh) rotate(45deg); opacity: 0; }
-            to { transform: translateY(-10vh) rotate(45deg); opacity: 0.7; }
-        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Feliz San Valentín, Amor</h1>
+        <img src="corazon.png" class="corazon izquierda">
+        <h1>Feliz San Valentín, Amor</h1>
+        <img src="corazon.png" class="corazon derecha">
 </header>
+    
 
-<!-- Galería de Fotos -->
-<section class="gallery">
-    <!-- Sustituye los src con tus fotos -->
-    <img src="foto1.jpg" alt="Foto 1">
-    <img src="foto2.jpg" alt="Foto 2">
-    <img src="foto3.jpg" alt="Foto 3">
-</section>
 
 <!-- Línea de Tiempo -->
 <section class="timeline">
-    <h2>Nuestra Historia</h2>
+    <h2>De: Alberto Martines</h2>
+    <h2>Para: Jennifer Gil</h2>
     <div class="event">
-        <h3>Primer Encuentro</h3>
-        <p>El día que nuestras miradas se cruzaron por primera vez.</p>
+        <h3>10 razones por las que te amo</h3>
+        <p>1- Tu Sonrisa es hermosa, por eso siempre hago cosas para hacerte feliz.</p>
+        <p>2- Cuando veo tus ojos me pierdo tan profundamente en ellos que siento que voy a estallar.</p>
+        <p>3- Tus besos hacen que me alborote, me dan ganas de explotar.</p>
+        <p>4- Tu cuerpo es la descripción de mis gustos, me encanta cada parte de ti.</p>
+        <p>5- Lo que consideras defectos en ti, es lo que veo como perfección ante mis ojos.</p>
+        <p>6- Tu olor corporal me cautiva, me despierta las hormonas que tengo y que nunca se despertaron con nadie mas.</p>
+        <p>7- Tu forma de ser compila con la mía, por lo que me causas paz y siempre quiero tenerte a mi lado.</p>
+        <p>8- Mirarte a los ojos me sube al cielo, son tan hermosos que me pierdo en ellos.</p>
+        <p>9- Tu carisma me hace sentir cómodo y complementado, no me da vergüenza ser quien soy contigo.</p>
+        <p>10- Tu delicadeza lo limpias que eres me hace tener ganas de explorar tu cuerpo completo sin miedos y con confianza.</p>
+        <br>
     </div>
+</section>
+    <section class="timeline">
     <div class="event">
-        <h3>Nuestra Primera Cita</h3>
-        <p>Un día inolvidable lleno de risas y momentos especiales.</p>
+        <h3>Mi Corazon es tuyo</h3>
+            <p>Al final son muchas cosas mas por las que te amo, porque me encantas en todos los sentidos y te doy
+                muchas gracias por decidir compartir tu vida conmigo y darme la oportunidad de porder aportar aunque sea
+                un poquito para hacerte feliz, recuerda siempre y que nunca se te salga de la cabeza que mi corazon es tuyo
+                y que siempre lo sera, se que lo digo mucho pero te amo, y lo hago con todo micorazon, me haces muy feliz 
+                y me das la paz que siempre e querido.</p>
+
     </div>
+    </section>
+
+    <section class="timeline">
     <div class="event">
-        <h3>El "Te Amo"</h3>
-        <p>El momento en que nuestras palabras sellaron nuestro amor.</p>
+        <h3>Mi amor hacia ti</h3>
+        <p>Te amo como muchísimo y trato de demostrártelo en cada momento
+            , por eso quizás siempre vivo tocándote. Espero que el respeto
+             y el amor siempre existan en nuestra relación y dicen que la
+              etapa del enamoramiento del hombre es la única en la que
+               tratan bien a su pareja pero pretendo que esa etapa nunca
+                deje la relación en cuanto a mi consta y siempre te
+                 tratare con el mismo amor que en el primer día, porque
+                  planeo estar siempre enamorado de ti y el día que no me
+                   sienta así luchare para que vuelva a mi el mismo amor y
+                    el deseo que siempre te he tenido, es una promesa que
+                     te hago hoy y planeo cumplir por el resto de mi vida
+                      que planeo pasarla junto a ti..</p>
+                      <br>
+    </div>
+    </section>
+    <section class="timeline">
+        <div class="event">
+            <h3>Mis votos no son despues del matrimonio, si no desde ahora</h3>
+            <p>Te agradezco profundamente que estes hoy en mi vida porque
+             me haz enseñado muchas cosas. En el día de hoy quiero
+              adelantar uno de mis votos para cuando nos casemos y es que
+               te prometo serte fiel y no irrespetarte pase lo que pase
+                tratándote con amor en cualquier circunstancia en la que
+                 nos ponga la vida.</p>
     </div>
 </section>
 
-<!-- Playlist -->
+<section class="timeline">
+    <div class="event">
+        <h3>Porque eres importante para mi.</h3>
+        <p>Tenemos mas o menos un año de estar juntos y para mi a
+             sido el mejor año de mi vida, donde volví a sonreír y
+              no a ser feliz si no a ser super feliz estando a tu
+               lado, espero que eso de estar viéndonos 1 o 2 veces
+                a la semana cambie pronto y que ya podamos amanecer juntos
+                 todos los días compartiendo sabanas cariño y amor todos los dias.</p>
+                 <br>
+    </div>
+</section>
+<section class="timeline">
+    <div class="event">
+        <h3>Luchare siempre por ti</h3>
+        <p>Me dijiste que tenias miedo de que si nos casamos todo
+             se vuelva un disparate pero te prometo que tratare de
+              evitar eso a toda costa si llega el momento y que cada dia luchare
+              para que lo nuestro dure y que los años pasen y que nosotros sigamos juntos 
+              construyendo nuestro amor dia a dia y seguir tomando la decicion de que seas tu la 
+              mujer que quiero en mi vida y que yo sea tu hombre.</p>
+              <br>
+    </div>
+</section>
+<section class="timeline">
+    <div class="event">
+        <h3>Como veo los tropiezos del futuro</h3>
+        <p>Me llega a la mente que hay muchas cosas en mi vida que
+             me salen mal y aveces me da miedo de que pase con
+              nosotros pero no es que me confié ni nada si no que
+               tengo la seguridad Con Dios por delante que no,
+                habra nada que afecte lo lindo que tenemos,
+                 nuestro lugar feliz el cual somos nosotros mismos
+                  juntos.</p>
+                  <br>
+    </div>
+</section>
+<section class="timeline">
+    <div class="event">
+        <h3>PD:</h3>
+        <p>Te amo mucho, con todo mi corazón y mi alma, espero ser
+             feliz junto a ti el resto de mi vida.</p>
+    </div>
+</section>
+
+
+
+<h2 class="eso">Los mejores momentos desde que nos volvimos a encontrar</h2>
+<!-- Galería de Fotos -->
+<section class="gallery">
+    <img src="1.JPEG" alt="Foto 1">
+    <img src="2.JPEG" alt="Foto 2">
+    <img src="4.JPEG" alt="Foto 1">
+    <img src="5.JPEG" alt="Foto 2">
+    <img src="6.JPEG" alt="Foto 3">
+    <img src="7.JPEG" alt="Foto 1">
+    <img src="8.JPEG" alt="Foto 2">
+    <img src="9.JPEG" alt="Foto 3">
+    <img src="10.JPEG" alt="Foto 1">
+    <img src="11.JPEG" alt="Foto 2">
+    <img src="12.JPEG" alt="Foto 3">
+    <img src="13.JPEG" alt="Foto 1">
+    <img src="14.JPEG" alt="Foto 2">
+    <img src="15.JPEG" alt="Foto 3">
+    <img src="16.JPEG" alt="Foto 1">
+    <img src="17.JPEG" alt="Foto 2">
+    <img src="18.JPEG" alt="Foto 3">
+    <img src="19.jpg" alt="Foto 1">
+    <img src="20.jpg" alt="Foto 2">
+    <img src="21.JPEG" alt="Foto 3">
+    <img src="22.JPEG" alt="Foto 1">
+
+
+    <img src="25.jpg" alt="Foto 1">
+    <img src="26_014.jpg" alt="Foto 2">
+    
+    <img src="28.jpg" alt="Foto 1">
+    <img src="29.jpg" alt="Foto 2">
+    <img src="88.jpeg" alt="Foto 1">
+    <img src="p.jpeg" alt="Foto 3">
+    <img src="99.jpeg" alt="Foto 2">
+    <img src="33.jpg" alt="Foto 3">
+    
+    <img src="35.jpg" alt="Foto 2">
+    <img src="36.jpg" alt="Foto 3">
+    <img src="77.jpeg" alt="Foto 1">
+    <img src="38.jpg" alt="Foto 2">
+    
+    <img src="40.jpg" alt="Foto 1">
+    <img src="55.jpeg" alt="Foto 2">
+    <img src="42.jpg" alt="Foto 3">
+    <img src="98.jpeg" alt="Foto 1">
+
+    <video controls width="200">
+        <source src="v1.MP4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <video controls width="200">
+        <source src="v2.MP4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <video controls width="200">
+        <source src="23.MP4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <video controls width="200">
+        <source src="6.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <video controls width="200">
+        <source src="7.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <video controls width="200">
+        <source src="8.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <video controls width="200">
+        <source src="15.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+</section>
+
+<!-- Canciones Especiales -->
 <section class="playlist">
-    <h2>Nuestras Canciones</h2>
-    <!-- Sustituye el link con tu playlist -->
-    <iframe src="https://open.spotify.com/embed/playlist/tu_playlist_id" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <h2>Nuestra Cancion</h2>
+    <!-- https://open.spotify.com/intl-es/track/35ttE4t8lQZA2vuCYDg4G7?si=4a5ecbfad5b84a19 -->
+    <iframe src="https://open.spotify.com/embed/track/35ttE4t8lQZA2vuCYDg4G7?si=4a5ecbfad5b84a19" height="80" frameborder="0"></iframe>
 </section>
-
-<!-- Corazones Animados -->
-<script>
-    function createHearts() {
-        for (let i = 0; i < 20; i++) {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.style.left = Math.random() * window.innerWidth + 'px';
-            heart.style.animationDuration = (3 + Math.random() * 5) + 's';
-            document.body.appendChild(heart);
-        }
-    }
-    createHearts();
-</script>
-
+<footer>Con mucho amor de Alberto para su futura esposa Jennifer.</footer>
 </body>
 </html>
